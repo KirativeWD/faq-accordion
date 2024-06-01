@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Faq({ faqs }) {
+
+    // Sets the initial state of all answers to false
+    const [answerVisible, setAnswerVisible] = useState(
+        new Array(faqs.length).fill(false)
+    );
+
+    // Tracks the state of all answers and updates state accordingly
+    const toggleAnswerVisible = (index) => {
+        const answersVisible = [...answerVisible];
+        answersVisible[index] = !answersVisible[index];
+        setAnswerVisible(answersVisible);
+    }
 
     return (
         <article>
@@ -9,13 +21,25 @@ function Faq({ faqs }) {
                 <span className="sr-only">Frequently Asked Questions</span>
             </h1>
             <ul>
-                {faqs.map(faq => {
+                {faqs.map((faq, index) => {
+
+                    const questionId = `question-${index}`;
+                    const answerId = `answer-${index}`;
+
                     return (
-                        <li>
+                        <li key={index}>
                             <h3>
-                                <button>{faq.question}</button>
+                                <button onClick={() => toggleAnswerVisible(index)}
+                                    aria-expanded={answerVisible[index]}
+                                    aria-controls={answerId}
+                                    id={questionId}>{faq.question}</button>
                             </h3>
-                            <p>{faq.answer}</p>
+                            <p id={answerId}
+                                aria-labelledby={questionId}
+                                aria-hidden={!answerVisible[index]}
+                                aria-live="assertive"
+                                role="region"
+                                hidden={!answerVisible[index]}>{faq.answer}</p>
                         </li>
                     )
                 })}
