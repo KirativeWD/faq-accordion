@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./css/Faq.css";
 
 function Faq({ faqs }) {
 
@@ -32,7 +33,10 @@ function Faq({ faqs }) {
                                 <button onClick={() => toggleAnswerVisible(index)}
                                     aria-expanded={answerVisible[index]}
                                     aria-controls={answerId}
-                                    id={questionId}>{faq.question}</button>
+                                    id={questionId}>
+                                    <span>{faq.question}</span>
+                                    <img src={answerVisible[index] ? "./images/icon-minus.svg" : "./images/icon-plus.svg"} alt="" />
+                                </button>
                             </h2>
                             <p id={answerId}
                                 aria-labelledby={questionId}
