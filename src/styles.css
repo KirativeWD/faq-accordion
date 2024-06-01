@@ -24,16 +24,55 @@
 
     /* ===== COLORS ===== */
     /* == BRAND == */
-    --clr-brand: ;
+    --clr-brand: hsl(292 42% 14%);
+    --clr-brand-highlight: hsl(281 83% 54%);
 
     /* == NEUTRAL == */
     --clr-neutral-100: hsl(0 0% 100%);
-    --clr-neutral-150: hsl(275 100% 97%);
+    --clr-neutral-150: hsl(275 100% 95%);
     --clr-neutral-600: hsl(296, 16%, 37%);
 
 }
 
+.sr-only {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+
 body {
+    font-size: 1rem;
     font-family: var(--ff-body);
     color: var(--clr-neutral-600);
+    background: var(--clr-neutral-150);
+    padding-inline: 5%;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 46lvh;
+    background: center center url(./images/background-pattern-desktop.svg);
+    background-size: cover;
+}
+
+@media (width <=48em) {
+    body::before {
+        background: center center url(./images/background-pattern-mobile.svg);
+        height: 14.5rem;
+        background-size: cover;
+    }
 }

@@ -28,7 +28,7 @@ svg {
 }
 
 button {
-    font: inherit;
+    font-family: inherit;
 }
 
 #root,

@@ -1,0 +1,74 @@
+article {
+    background: var(--clr-neutral-100);
+    max-width: 41em;
+    padding: 2rem;
+    margin: 28lvh auto;
+    border-radius: 1rem;
+    box-shadow: 0 1rem 3rem hsla(281 83% 54% / 0.15);
+}
+
+h1,
+button {
+    color: var(--clr-brand);
+}
+
+h1 {
+    font-size: clamp(2rem, 4vw + 1rem, 3.5rem);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h1::before {
+    content: '';
+    background: url(./images/icon-star.svg);
+    background-size: contain;
+    width: clamp(1.5rem, 4vw + 0.25rem, 2.5rem);
+    aspect-ratio: 1;
+}
+
+li:not(:last-of-type) {
+    border-bottom: 1px solid var(--clr-neutral-150);
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: 0;
+    font-size: 1.25rem;
+    text-align: left;
+    font-weight: 600;
+    padding-block: 1.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    transition: color 200ms ease-in-out;
+}
+
+button:is(:hover, :focus-visible) {
+    color: var(--clr-brand-highlight);
+}
+
+p {
+    margin-bottom: 1.5rem;
+}
+
+@media (width <=48em) {
+    article {
+        margin-top: 9rem;
+        padding: 1rem 1.5rem .5rem;
+        border-radius: 0.5rem;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    button {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+}
