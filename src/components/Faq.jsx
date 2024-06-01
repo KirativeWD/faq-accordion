@@ -28,12 +28,12 @@ function Faq({ faqs }) {
 
                     return (
                         <li key={index}>
-                            <h3>
+                            <h2>
                                 <button onClick={() => toggleAnswerVisible(index)}
                                     aria-expanded={answerVisible[index]}
                                     aria-controls={answerId}
                                     id={questionId}>{faq.question}</button>
-                            </h3>
+                            </h2>
                             <p id={answerId}
                                 aria-labelledby={questionId}
                                 aria-hidden={!answerVisible[index]}
