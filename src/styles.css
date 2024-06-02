@@ -1,19 +1,19 @@
 @font-face {
     font-family: 'Work Sans';
     font-weight: 400;
-    src: url(./fonts/WorkSans-Regular.woff2) format(woff2), url(./fonts/WorkSans-Regular.woff) format(woff);
+    src: url(../fonts/WorkSans-Regular.woff2) format(woff2), url(../fonts/WorkSans-Regular.woff) format(woff);
 }
 
 @font-face {
     font-family: 'Work Sans';
     font-weight: 600;
-    src: url(./fonts/WorkSans-SemiBold.woff2) format(woff2), url(./fonts/WorkSans-SemiBold.woff) format(woff);
+    src: url(../fonts/WorkSans-SemiBold.woff2) format(woff2), url(../fonts/WorkSans-SemiBold.woff) format(woff);
 }
 
 @font-face {
     font-family: 'Work Sans';
     font-weight: 700;
-    src: url(./fonts/WorkSans-Bold.woff2) format(woff2), url(./fonts/WorkSans-Bold.woff) format(woff);
+    src: url(../fonts/WorkSans-Bold.woff2) format(woff2), url(../fonts/WorkSans-Bold.woff) format(woff);
 }
 
 :root {
@@ -65,13 +65,13 @@ body::before {
     z-index: -1;
     width: 100vw;
     height: 46lvh;
-    background: center center url(./images/background-pattern-desktop.svg);
+    background: center center url(../images/background-pattern-desktop.svg);
     background-size: cover;
 }
 
 @media (width <=48em) {
     body::before {
-        background: center center url(./images/background-pattern-mobile.svg);
+        background: center center url(../images/background-pattern-mobile.svg);
         height: 14.5rem;
         background-size: cover;
     }

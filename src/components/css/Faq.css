@@ -22,7 +22,7 @@ h1 {
 
 h1::before {
     content: '';
-    background: url(./images/icon-star.svg);
+    background: url(../../images/icon-star.svg);
     background-size: contain;
     width: clamp(1.5rem, 4vw + 0.25rem, 2.5rem);
     aspect-ratio: 1;
