@@ -40,7 +40,6 @@ function Faq({ faqs }) {
                             </h2>
                             <p id={answerId}
                                 aria-labelledby={questionId}
-                                aria-hidden={!answerVisible[index]}
                                 aria-live="assertive"
                                 role="region"
                                 hidden={!answerVisible[index]}>{faq.answer}</p>
